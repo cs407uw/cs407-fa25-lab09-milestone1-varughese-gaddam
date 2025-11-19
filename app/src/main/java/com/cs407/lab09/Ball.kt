@@ -105,7 +105,7 @@ class Ball(
     fun reset() {
         // (Reset posX, posY, velocityX, velocityY, accX, accY, isFirstUpdate)
         posX = (backgroundWidth - ballSize) / 2f
-        posY = (backgroundWidth - ballSize) / 2f
+        posY = (backgroundHeight - ballSize) / 2f
 
         velocityX = 0f
         velocityY = 0f

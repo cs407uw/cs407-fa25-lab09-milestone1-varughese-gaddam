@@ -58,7 +58,7 @@ class BallViewModel : ViewModel() {
             }
 
             // Update the lastTimestamp
-            // lastTimestamp = event.timestamp
+            lastTimestamp = event.timestamp
         }
     }
 
