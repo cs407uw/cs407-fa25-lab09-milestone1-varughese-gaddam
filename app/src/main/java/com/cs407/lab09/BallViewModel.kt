@@ -2,6 +2,7 @@ package com.cs407.lab09
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
+import android.util.Log
 import androidx.compose.ui.geometry.Offset
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -51,7 +52,9 @@ class BallViewModel : ViewModel() {
 
                 // Update the ball's position and velocity
                 // Hint: The sensor's x and y-axis are inverted
-                currentBall.updatePositionAndVelocity(xAcc = -event.values[0], yAcc = -event.values[1], dT)
+                currentBall.updatePositionAndVelocity(xAcc = -event.values[0], yAcc = event.values[1], dT)
+                Log.d("SENSOR", "gx=${event.values[0]}, gy=${event.values[1]}, gz=${event.values[2]}")
+
 
                 // Update the StateFlow to notify the UI
                 _ballPosition.update { Offset(currentBall.posX, currentBall.posY) }
